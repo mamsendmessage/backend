@@ -8,6 +8,7 @@ router.get("/", function (req, res, next) {
 
 router.post("/sendMessage", function (req, res, next) {
   fs.appendFileSync("./message.txt", JSON.stringify(req.body) + "\r\n");
+  console.log("Message Subimtted");
 });
 
 module.exports = router;
