@@ -11,4 +11,9 @@ router.post("/sendMessage", function (req, res, next) {
   console.log("Message Subimtted");
 });
 
+router.get("/getMessages", function (req, res, next) {
+  const file = fs.readFileSync("./message.txt", { encoding: "utf8" });
+  res.send(file);
+});
+
 module.exports = router;
